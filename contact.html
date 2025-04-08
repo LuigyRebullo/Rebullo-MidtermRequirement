@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Coffee & Co.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Coffee & Co.</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact-form">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm" name="contactForm" onsubmit="return validateForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <section id="location">
+            <h2>Visit Us</h2>
+            <p>123 Coffee Street, Coffee Town, CT 12345</p>
+            <p>Phone: (123) 456-7890</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us at: <a href="mailto:info@coffeeandco.com">info@coffeeandco.com</a></p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            var name = document.forms["contactForm"]["name"].value;
+            var email = document.forms["contactForm"]["email"].value;
+            var message = document.forms["contactForm"]["message"].value;
+
+            if (name == "" || email == "" || message == "") {
+                alert("All fields must be filled out.");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
